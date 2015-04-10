@@ -1,4 +1,5 @@
 FROM 0x4139/java8
+MAINTAINER nytr0gen.george@gmail.com
 
 # Utilities
 RUN apt-get update; apt-get install -y wget
