@@ -16,7 +16,8 @@ RUN \
 RUN \
   mkdir -p kibana; \
   wget -nv -O - https://download.elasticsearch.org/kibana/kibana/kibana-4.0.1-linux-x64.tar.gz | \
-  tar xzf - --strip-components=1 -C kibana
+  tar xzf - --strip-components=1 -C kibana; \
+  sed -i -e "s/port: 5601/port: 80/" kibana/config/kibana.yml
 
 # Logstash
 RUN \
@@ -36,8 +37,8 @@ RUN cd /tmp; \
   cp supervisord.conf /etc/supervisor/conf.d; \
   cp logstash.conf /etc/logstash.conf
 
-# 5601=kibana, 9200=elasticsearch, 49021=logstash, 28777=logger
-EXPOSE 5601 9200 28777 49021
+# 80=kibana, 9200=elasticsearch, 49021=logstash, 28777=logger
+EXPOSE 80 9200 28777 49021
 
 # Clean everything up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
