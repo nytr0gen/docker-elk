@@ -2,9 +2,9 @@
 
 Elasticsearch, Logstash and Kibana stack. Lightweight.
 
-> Elasticsearch 1.4.4
-> Kibana 4.0.1
-> Logstash 1.4.2
+> Elasticsearch 1.4.5
+> Kibana 4.0.3
+> Logstash 1.4.3
 
 You can check it out by running the following commands
 ```
