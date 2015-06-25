@@ -10,7 +10,7 @@ RUN \
   mkdir -p elasticsearch; \
   wget -nv -O - https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.5.tar.gz | \
   tar xzf - --strip=1 -C elasticsearch; \
-  sed -i -e "s/\#network\.host.+/network.host: localhost/" elasticsearch/config/elasticsearch.yml
+  sed -i -E "s/\#network\.host.+/network.host: localhost/" elasticsearch/config/elasticsearch.yml
 
 # Kibana
 RUN \
