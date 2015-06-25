@@ -8,21 +8,21 @@ WORKDIR /opt
 # ElasticSearch
 RUN \
   mkdir -p elasticsearch; \
-  wget -nv -O - https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.4.tar.gz | \
-  tar xzf - --strip-components=1 -C elasticsearch; \
+  wget -nv -O - https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.5.tar.gz | \
+  tar xzf - --strip=1 -C elasticsearch; \
   sed -i -e "s/\#network\.host.+/network.host: localhost/" elasticsearch/config/elasticsearch.yml
 
 # Kibana
 RUN \
   mkdir -p kibana; \
-  wget -nv -O - https://download.elasticsearch.org/kibana/kibana/kibana-4.0.1-linux-x64.tar.gz | \
-  tar xzf - --strip-components=1 -C kibana
+  wget -nv -O - https://download.elasticsearch.org/kibana/kibana/kibana-4.0.3-linux-x64.tar.gz | \
+  tar xzf - --strip=1 -C kibana
 
 # Logstash
 RUN \
   mkdir -p logstash; \
-  wget -nv -O - https://download.elasticsearch.org/logstash/logstash/logstash-1.4.2.tar.gz | \
-  tar xzf - --strip-components=1 -C logstash
+  wget -nv -O - https://download.elasticsearch.org/logstash/logstash/logstash-1.4.3.tar.gz | \
+  tar xzf - --strip=1 -C logstash
 
 # Supervisord
 RUN \
