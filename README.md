@@ -26,7 +26,7 @@ docker run -e CURATOR_CRON=true vulpe03/elk
 ```
 
 You can replace my curator_clean.sh with your own doing something like this with your Dockerfile
-```
+```dockerfile
 FROM vulpe03/elk
 COPY your_curator_cron.sh /opt/curator_cron.sh
 ```
